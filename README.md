@@ -10,37 +10,37 @@ Make sure to have installed also ALL the official qbRobotics [ROS nodes](https:/
 
 ## Configure your qbMove devices
 To define the ID values and the name of your robot, edit the following lines of the configuration file inside the *config* folder.
-	```yaml
-	## Namespace of the robot
-	namespace: "your_robot"
+```yaml
+## Namespace of the robot
+namespace: "your_robot"
 
-	## Cubes parameters of the chain
-	IDs: [1, 2]          # cubes identifiers
+## Cubes parameters of the chain
+IDs: [1, 2]          # cubes identifiers
 
-	## Time parameters (in seconds)
-	T_sample: 0.01       # sample time
+## Time parameters (in seconds)
+T_sample: 0.01       # sample time
 
-	## Enable command passed in rad (if true you can command the motors in radians, if false in ticks)
-	flag_rad: true
-	```
+## Enable command passed in rad (if true you can command the motors in radians, if false in ticks)
+flag_rad: true
+```
 
 ## How to launch it
 After connecting the USB cable of your qbmoves chain, and setting the value inside the configuration file, type on the terminal
-	```launch
-	roslaunch qbrun-ros run_qb.launch
-	```
+```launch
+roslaunch qbrun-ros run_qb.launch
+```
 
 Your chain of qbmove devices will be activated and you will be able to command the motor signals (via array of radiants or ticks, depending on the previous *flag_red* value) through the following topics
-	```yaml
-	/your_robot/reference_1
-	/your_robot/reference_2
-	```
+```yaml
+/your_robot/reference_1
+/your_robot/reference_2
+```
 The measured signals from the position encoders will be available through the following topics
-	```yaml
-	/your_robot/motor_1_state		# for motor 1
-	/your_robot/motor_2_state		# for motor 2
-	/your_robot/robot_state			# for the link
-	```
+```yaml
+/your_robot/motor_1_state		# for motor 1
+/your_robot/motor_2_state		# for motor 2
+/your_robot/robot_state			# for the link
+```
 
 ## NOTE
 The nomenclature of the topics of this package is the same of the one used in the [ROS-Gazebo-compliant-actuators-plugin](https://github.com/NMMI/ROS-Gazebo-compliant-actuators-plugin).
