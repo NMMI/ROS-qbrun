@@ -1,0 +1,11 @@
+## Namespace of the robot
+namespace: "two_dofs_TEST"
+
+## Cubes parameters of the chain
+IDs: [2]             # cubes identifiers
+
+## Time parameters (in seconds)
+T_sample: 0.01       # sample time
+
+## Enable command passed in rad (if true you can command the motors in radians, if false in ticks)
+flag_rad: true

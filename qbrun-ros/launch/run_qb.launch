@@ -1,0 +1,12 @@
+<launch>
+    <include file="$(find qb_device_driver)/launch/communication_handler.launch"/>
+
+    <!-- Load the parameter from the configuration file -->
+    <rosparam command="load" file="$(find qbrun-ros)/config/config_qb.yaml"/>
+
+    <!-- Run the measurement node -->
+    <node name="qbrun_node" pkg="qbrun-ros" type="qbrun_node" respawn="false"
+          args="0"  output="screen">
+    </node>
+
+</launch>
